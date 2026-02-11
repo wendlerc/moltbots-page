@@ -143,8 +143,9 @@ function loadFile(filename) {
     .catch(() => { body.innerHTML = '<p style="color:#c00;">Failed to load file.</p>'; });
 }
 
-// Load SOUL.md by default
-loadFile('SOUL.md');
+// Load from hash or default to SOUL.md
+const hashFile = window.location.hash.replace('#', '');
+loadFile(files.includes(hashFile) ? hashFile : 'SOUL.md');
 </script>
 
 </body>

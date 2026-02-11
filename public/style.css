@@ -258,3 +258,73 @@ pre.code-block {
   margin-left: 0;
   color: #666;
 }
+
+/* Hover preview popup */
+.hover-popup {
+  position: fixed;
+  width: 360px;
+  max-height: 300px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hover-popup-header {
+  background: #1a1a2e;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.hover-popup-body {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-height: 240px;
+  overflow: hidden;
+}
+
+.hover-popup-body h1 { font-size: 1.1rem; margin-top: 0; }
+.hover-popup-body h2 { font-size: 1rem; margin-top: 0.75rem; }
+.hover-popup-body h3 { font-size: 0.95rem; }
+.hover-popup-body code { background: #f0f0f0; padding: 1px 4px; border-radius: 3px; font-size: 0.85em; }
+.hover-popup-body pre { background: #1a1a2e; color: #e4f1fe; padding: 0.5rem; border-radius: 4px; font-size: 0.8em; overflow: hidden; }
+.hover-popup-body pre code { background: none; color: inherit; }
+
+.hover-preview:hover {
+  border-color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Prompt assembly section */
+.prompt-assembly {
+  margin: 1.5rem 0;
+}
+
+.prompt-toggle {
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.prompt-toggle:hover {
+  background: #e9ecef;
+}
+
+.prompt-detail {
+  margin-bottom: 1rem;
+}
+
+.prompt-detail .code-block {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
