@@ -83,6 +83,26 @@ h2 {
   border-radius: 3px;
 }
 
+.architecture-box.scaffold-link {
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.architecture-box.scaffold-link:hover {
+  border-color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.scaffold-file-link {
+  color: #0066cc;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.scaffold-file-link:hover {
+  color: #004499;
+}
+
 .bot-card {
   background: #f8f9fa;
   border: 1px solid #dee2e6;
@@ -95,6 +115,23 @@ h2 {
 .bot-card .bot-emoji {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+}
+
+.bot-card .bot-email {
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.bot-card .bot-email a {
+  color: #0066cc;
+}
+
+.bot-card .bot-note {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
 }
 
 .paradigm-step {
@@ -116,4 +153,108 @@ pre.code-block {
   border-radius: 8px;
   font-size: 0.9rem;
   overflow-x: auto;
+}
+
+/* Scaffold modal styles */
+.scaffold-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.scaffold-modal-content {
+  background: white;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.scaffold-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+  background: #1a1a2e;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.scaffold-close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.scaffold-close:hover {
+  opacity: 1;
+}
+
+.scaffold-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.scaffold-body h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.scaffold-body h2 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.scaffold-body h3 {
+  font-size: 1.1rem;
+  margin-top: 1.25rem;
+}
+
+.scaffold-body code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.scaffold-body pre {
+  background: #1a1a2e;
+  color: #e4f1fe;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.scaffold-body pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.scaffold-body ul, .scaffold-body ol {
+  padding-left: 1.5rem;
+}
+
+.scaffold-body blockquote {
+  border-left: 3px solid #dee2e6;
+  padding-left: 1rem;
+  margin-left: 0;
+  color: #666;
 }

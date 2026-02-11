@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scaffold Files &mdash; Moltbots at the Bau Lab</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+.file-list {
+  list-style: none;
+  padding: 0;
+}
+.file-list li {
+  display: inline-block;
+  margin: 0.25rem;
+}
+.file-list a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  color: #1a1a2e;
+  font-family: monospace;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.file-list a:hover, .file-list a.active {
+  border-color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #1a1a2e;
+}
+.file-list a.active {
+  background: #1a1a2e;
+  color: white;
+}
+.file-viewer {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+.file-viewer-header {
+  background: #1a1a2e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+.file-viewer-body {
+  padding: 1.5rem;
+  line-height: 1.6;
+  min-height: 300px;
+}
+.file-viewer-body h1 { font-size: 1.5rem; margin-top: 0; border-bottom: 1px solid #dee2e6; padding-bottom: 0.5rem; }
+.file-viewer-body h2 { font-size: 1.25rem; margin-top: 1.5rem; }
+.file-viewer-body h3 { font-size: 1.1rem; margin-top: 1.25rem; }
+.file-viewer-body code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+.file-viewer-body pre { background: #1a1a2e; color: #e4f1fe; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+.file-viewer-body pre code { background: none; padding: 0; color: inherit; }
+.file-viewer-body ul, .file-viewer-body ol { padding-left: 1.5rem; }
+.file-viewer-body blockquote { border-left: 3px solid #dee2e6; padding-left: 1rem; margin-left: 0; color: #666; }
+</style>
+</head>
+<body class="nd-docs">
+
+<div class="nd-pageheader">
+ <div class="container">
+ <h1 class="lead">
+ <nobr class="widenobr">Scaffold Files</nobr>
+ </h1>
+ <p style="font-size:1.2rem; font-weight:300;">Flux's workspace files &mdash; the markdown that shapes an agent</p>
+ <p style="font-size:0.95rem;"><a href="index.html">&larr; Back to main page</a></p>
+ </div>
+</div>
+
+<div class="container">
+
+<p>
+These are the actual scaffold files from <strong>Flux</strong>'s workspace. Each file serves a different purpose in shaping the agent's behavior, memory, and identity. Click any file to view its contents.
+</p>
+
+<ul class="file-list" id="file-list">
+  <li><a onclick="loadFile('SOUL.md')" id="btn-SOUL.md">SOUL.md</a></li>
+  <li><a onclick="loadFile('MEMORY.md')" id="btn-MEMORY.md">MEMORY.md</a></li>
+  <li><a onclick="loadFile('AGENTS.md')" id="btn-AGENTS.md">AGENTS.md</a></li>
+  <li><a onclick="loadFile('TOOLS.md')" id="btn-TOOLS.md">TOOLS.md</a></li>
+  <li><a onclick="loadFile('IDENTITY.md')" id="btn-IDENTITY.md">IDENTITY.md</a></li>
+  <li><a onclick="loadFile('BOOTSTRAP.md')" id="btn-BOOTSTRAP.md">BOOTSTRAP.md</a></li>
+  <li><a onclick="loadFile('HEARTBEAT.md')" id="btn-HEARTBEAT.md">HEARTBEAT.md</a></li>
+  <li><a onclick="loadFile('USER.md')" id="btn-USER.md">USER.md</a></li>
+  <li><a onclick="loadFile('TODO.md')" id="btn-TODO.md">TODO.md</a></li>
+</ul>
+
+<div class="file-viewer" id="file-viewer">
+  <div class="file-viewer-header" id="file-viewer-header">Select a file above</div>
+  <div class="file-viewer-body" id="file-viewer-body">
+    <p style="color:#888;">Click any file to view its contents.</p>
+  </div>
+</div>
+
+</div>
+
+<div class="nd-pagefooter">
+<div class="container">
+<p>
+<a href="index.html">&larr; Back to main page</a>
+</p>
+<p>
+<a href="https://baulab.info/" target="_blank">Bau Lab</a> &middot;
+<a href="https://khoury.northeastern.edu/" target="_blank">Northeastern University</a> &middot;
+<a href="https://github.com/openclaw/openclaw" target="_blank">OpenClaw on GitHub</a>
+</p>
+</div>
+</div>
+
+<script>
+const files = ['SOUL.md','MEMORY.md','AGENTS.md','TOOLS.md','IDENTITY.md','BOOTSTRAP.md','HEARTBEAT.md','USER.md','TODO.md'];
+
+function loadFile(filename) {
+  const header = document.getElementById('file-viewer-header');
+  const body = document.getElementById('file-viewer-body');
+  
+  // Update active state
+  files.forEach(f => {
+    const btn = document.getElementById('btn-' + f);
+    if (btn) btn.classList.toggle('active', f === filename);
+  });
+  
+  header.textContent = filename;
+  body.innerHTML = '<p style="color:#888;">Loading...</p>';
+  
+  fetch('scaffold/' + filename)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(text => { body.innerHTML = marked.parse(text); })
+    .catch(() => { body.innerHTML = '<p style="color:#c00;">Failed to load file.</p>'; });
+}
+
+// Load SOUL.md by default
+loadFile('SOUL.md');
+</script>
+
+</body>
+</html>
